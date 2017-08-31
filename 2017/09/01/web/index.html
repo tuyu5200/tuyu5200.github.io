@@ -104,17 +104,20 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="description" content="web入坑需谨慎1、getAttributeNamesrequest、response和servletContext作为作用域对象时：  request和response对象中的getAttributeNames()获得的就是所有键的集合（Enumeration），servletContext对象获得的则不是一个String类型,所以不能将集合中的值作为键来取值；   原因：因为ServletCo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2017/08/31/hello-world/index.html">
+<meta property="og:title" content="苦海作舟">
+<meta property="og:url" content="http://yoursite.com/2017/09/01/web/index.html">
 <meta property="og:site_name" content="苦海作舟">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="web入坑需谨慎1、getAttributeNamesrequest、response和servletContext作为作用域对象时：  request和response对象中的getAttributeNames()获得的就是所有键的集合（Enumeration），servletContext对象获得的则不是一个String类型,所以不能将集合中的值作为键来取值；   原因：因为ServletCo">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:updated_time" content="2017-08-31T15:50:22.884Z">
+<meta property="og:image" content="http://yoursite.com/2017/09/01/web/xxx">
+<meta property="og:image" content="http://yoursite.com/2017/09/01/web/xxx">
+<meta property="og:updated_time" content="2017-08-31T16:16:08.493Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="苦海作舟">
+<meta name="twitter:description" content="web入坑需谨慎1、getAttributeNamesrequest、response和servletContext作为作用域对象时：  request和response对象中的getAttributeNames()获得的就是所有键的集合（Enumeration），servletContext对象获得的则不是一个String类型,所以不能将集合中的值作为键来取值；   原因：因为ServletCo">
+<meta name="twitter:image" content="http://yoursite.com/2017/09/01/web/xxx">
 
 
 
@@ -144,13 +147,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/08/31/hello-world/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/09/01/web/"/>
 
 
 
 
 
-  <title>Hello World | 苦海作舟</title>
+  <title> | 苦海作舟</title>
   
 
 
@@ -287,7 +290,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/31/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/01/web/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Tuyu">
@@ -304,7 +307,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World</h1>
+          <h1 class="post-title" itemprop="name headline"></h1>
         
 
         <div class="post-meta">
@@ -316,8 +319,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-31T20:34:28+08:00">
-                2017-08-31
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-01T00:17:44+08:00">
+                2017-09-01
               </time>
             
 
@@ -348,7 +351,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  78
+                  855
                 </span>
               
 
@@ -364,7 +367,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  1
+                  3
                 </span>
               
             </div>
@@ -385,17 +388,96 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><a id="more"></a>
-<h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
+        <h1 id="web"><a href="#web" class="headerlink" title="web"></a>web</h1><h1 id="入坑需谨慎"><a href="#入坑需谨慎" class="headerlink" title="入坑需谨慎"></a>入坑需谨慎</h1><h2 id="1、getAttributeNames"><a href="#1、getAttributeNames" class="headerlink" title="1、getAttributeNames"></a>1、getAttributeNames</h2><p>request、response和servletContext作为作用域对象时：</p>
+<p> request和response对象中的getAttributeNames()获得的就是所有键的集合（Enumeration<string>），servletContext对象获得的则不是一个String类型,所以不能将集合中的值作为键来取值；</string></p>
+<p>  原因：因为ServletContext对象在Tomcat服务器启动时候已经含有一些属性信息了，不只是String类型的，所以强转时候出错。</p>
+<h2 id="2、img-src-xxx"><a href="#2、img-src-xxx" class="headerlink" title="2、img src=/xxx"></a>2、img src=/xxx</h2><p><img src="xxx">使用servletContext的getResourcePaths方法：</p>
+<p>  从得到的Set<string> filePathsSet 集合中遍历出来的filepath虽然是相对路径，当如果直接将其添加到src后面则不能显示。</string></p>
+<p>  原因：从网页上的img标签中可以看到src后面没有第一个‘/’，所以如果直接将filepath添加到src后面便会有2个‘/’。</p>
+<h2 id="3、ajax异步同步问题"><a href="#3、ajax异步同步问题" class="headerlink" title="3、ajax异步同步问题"></a>3、ajax异步同步问题</h2><p><strong>function</strong> showAge(){</p>
+<p> // 基于准备好的dom，初始化echarts实例</p>
+<p> <strong>var</strong> myChart = echarts.init(document.getElementById(‘main’));</p>
+<p> // 指定图表的配置项和数据</p>
+<p> option = {</p>
+<p> title: {</p>
+<p> text: ‘年龄分布图’</p>
+<p> },</p>
+<p> tooltip: {},</p>
+<p> legend: {</p>
+<p> data:[‘年龄’]</p>
+<p> },</p>
+<p> xAxis: {</p>
+<p> data: []</p>
+<p> },</p>
+<p> yAxis: {},</p>
+<p> series: [{</p>
+<p> name: ‘年龄’,</p>
+<p> type: ‘bar’,</p>
+<p> data: []</p>
+<p> }]</p>
+<p> };</p>
+<p> ajax(“get”,”handleServlet”,”flag=queryAge”,<strong>function</strong>(data){</p>
+<p> eval(“var ageJson=”+data);</p>
+<p> <strong>for</strong> (<strong>var</strong> key <strong>in</strong> ageJson){</p>
+<p> option.xAxis.data.push(key);</p>
+<p> option.series[0].data.push(ageJson[key]);</p>
+<p> }</p>
+<p> // 使用刚指定的配置项和数据显示图表。</p>
+<p> myChart.setOption(option);</p>
+<p> });</p>
+<p> myChart.setOption(option); //产生异步问题，先于ajax执行，里面没有数据</p>
+<p> }</p>
+<p> |</p>
+<p>在进行类似添加时如果通过ajax去服务器取得数据后再来填充数据，如上会产生异步问题</p>
+<p><strong>解决方案：</strong></p>
+<p>1、将要填充的代码放入ajax程序中。</p>
+<p>2、将Ajax设置为同步访问，（默认异步）</p>
+<h2 id="4、ajax异步同步问题"><a href="#4、ajax异步同步问题" class="headerlink" title="4、ajax异步同步问题"></a>4、ajax异步同步问题</h2><h2 id="5、ajax异步同步问题"><a href="#5、ajax异步同步问题" class="headerlink" title="5、ajax异步同步问题"></a>5、ajax异步同步问题</h2><h2 id="6、ajax异步同步问题"><a href="#6、ajax异步同步问题" class="headerlink" title="6、ajax异步同步问题"></a>6、ajax异步同步问题</h2><h2 id="7、ajax异步同步问题-入坑需谨慎"><a href="#7、ajax异步同步问题-入坑需谨慎" class="headerlink" title="7、ajax异步同步问题# 入坑需谨慎"></a>7、ajax异步同步问题# 入坑需谨慎</h2><h2 id="1、getAttributeNames-1"><a href="#1、getAttributeNames-1" class="headerlink" title="1、getAttributeNames"></a>1、getAttributeNames</h2><p>request、response和servletContext作为作用域对象时：</p>
+<p> request和response对象中的getAttributeNames()获得的就是所有键的集合（Enumeration<string>），servletContext对象获得的则不是一个String类型,所以不能将集合中的值作为键来取值；</string></p>
+<p>  原因：因为ServletContext对象在Tomcat服务器启动时候已经含有一些属性信息了，不只是String类型的，所以强转时候出错。</p>
+<h2 id="2、img-src-xxx-1"><a href="#2、img-src-xxx-1" class="headerlink" title="2、img src=/xxx"></a>2、img src=/xxx</h2><p><img src="xxx">使用servletContext的getResourcePaths方法：</p>
+<p>  从得到的Set<string> filePathsSet 集合中遍历出来的filepath虽然是相对路径，当如果直接将其添加到src后面则不能显示。</string></p>
+<p>  原因：从网页上的img标签中可以看到src后面没有第一个‘/’，所以如果直接将filepath添加到src后面便会有2个‘/’。</p>
+<h2 id="3、ajax异步同步问题-1"><a href="#3、ajax异步同步问题-1" class="headerlink" title="3、ajax异步同步问题"></a>3、ajax异步同步问题</h2><p>| </p>
+<p><strong>function</strong> showAge(){</p>
+<p> // 基于准备好的dom，初始化echarts实例</p>
+<p> <strong>var</strong> myChart = echarts.init(document.getElementById(‘main’));</p>
+<p> // 指定图表的配置项和数据</p>
+<p> option = {</p>
+<p> title: {</p>
+<p> text: ‘年龄分布图’</p>
+<p> },</p>
+<p> tooltip: {},</p>
+<p> legend: {</p>
+<p> data:[‘年龄’]</p>
+<p> },</p>
+<p> xAxis: {</p>
+<p> data: []</p>
+<p> },</p>
+<p> yAxis: {},</p>
+<p> series: [{</p>
+<p> name: ‘年龄’,</p>
+<p> type: ‘bar’,</p>
+<p> data: []</p>
+<p> }]</p>
+<p> };</p>
+<p> ajax(“get”,”handleServlet”,”flag=queryAge”,<strong>function</strong>(data){</p>
+<p> eval(“var ageJson=”+data);</p>
+<p> <strong>for</strong> (<strong>var</strong> key <strong>in</strong> ageJson){</p>
+<p> option.xAxis.data.push(key);</p>
+<p> option.series[0].data.push(ageJson[key]);</p>
+<p> }</p>
+<p> // 使用刚指定的配置项和数据显示图表。</p>
+<p> myChart.setOption(option);</p>
+<p> });</p>
+<p> myChart.setOption(option); //产生异步问题，先于ajax执行，里面没有数据</p>
+<p> }</p>
+<p> |</p>
+<p>在进行类似添加时如果通过ajax去服务器取得数据后再来填充数据，如上会产生异步问题</p>
+<p><strong>解决方案：</strong></p>
+<p>1、将要填充的代码放入ajax程序中。</p>
+<p>2、将Ajax设置为同步访问，（默认异步）</p>
+<h2 id="4、ajax异步同步问题-1"><a href="#4、ajax异步同步问题-1" class="headerlink" title="4、ajax异步同步问题"></a>4、ajax异步同步问题</h2><h2 id="5、ajax异步同步问题-1"><a href="#5、ajax异步同步问题-1" class="headerlink" title="5、ajax异步同步问题"></a>5、ajax异步同步问题</h2><h2 id="6、ajax异步同步问题-1"><a href="#6、ajax异步同步问题-1" class="headerlink" title="6、ajax异步同步问题"></a>6、ajax异步同步问题</h2><h2 id="7、ajax异步同步问题"><a href="#7、ajax异步同步问题" class="headerlink" title="7、ajax异步同步问题"></a>7、ajax异步同步问题</h2>
       
     </div>
     
@@ -419,15 +501,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/08/31/first/" rel="next" title="first">
+                <i class="fa fa-chevron-left"></i> first
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/08/31/first/" rel="prev" title="first">
-                first <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -643,7 +725,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#web"><span class="nav-number">1.</span> <span class="nav-text">web</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#入坑需谨慎"><span class="nav-number">2.</span> <span class="nav-text">入坑需谨慎</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、getAttributeNames"><span class="nav-number">2.1.</span> <span class="nav-text">1、getAttributeNames</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、img-src-xxx"><span class="nav-number">2.2.</span> <span class="nav-text">2、img src=/xxx</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、ajax异步同步问题"><span class="nav-number">2.3.</span> <span class="nav-text">3、ajax异步同步问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、ajax异步同步问题"><span class="nav-number">2.4.</span> <span class="nav-text">4、ajax异步同步问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5、ajax异步同步问题"><span class="nav-number">2.5.</span> <span class="nav-text">5、ajax异步同步问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6、ajax异步同步问题"><span class="nav-number">2.6.</span> <span class="nav-text">6、ajax异步同步问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7、ajax异步同步问题-入坑需谨慎"><span class="nav-number">2.7.</span> <span class="nav-text">7、ajax异步同步问题# 入坑需谨慎</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1、getAttributeNames-1"><span class="nav-number">2.8.</span> <span class="nav-text">1、getAttributeNames</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、img-src-xxx-1"><span class="nav-number">2.9.</span> <span class="nav-text">2、img src=/xxx</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、ajax异步同步问题-1"><span class="nav-number">2.10.</span> <span class="nav-text">3、ajax异步同步问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、ajax异步同步问题-1"><span class="nav-number">2.11.</span> <span class="nav-text">4、ajax异步同步问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5、ajax异步同步问题-1"><span class="nav-number">2.12.</span> <span class="nav-text">5、ajax异步同步问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6、ajax异步同步问题-1"><span class="nav-number">2.13.</span> <span class="nav-text">6、ajax异步同步问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7、ajax异步同步问题"><span class="nav-number">2.14.</span> <span class="nav-text">7、ajax异步同步问题</span></a></li></ol></li></ol></div>
             
 
           </div>

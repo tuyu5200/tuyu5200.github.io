@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-08-31T13:05:30.989Z</updated>
+  <updated>2017-08-31T16:16:08.493Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,113 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://yoursite.com/2017/09/01/web/"/>
+    <id>http://yoursite.com/2017/09/01/web/</id>
+    <published>2017-08-31T16:17:44.024Z</published>
+    <updated>2017-08-31T16:16:08.493Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="web"><a href="#web" class="headerlink" title="web"></a>web</h1><h1 id="入坑需谨慎"><a href="#入坑需谨慎" class="headerlink" title="入坑需谨慎"></a>入坑需谨慎</h1><h2 id="1、getAttributeNames"><a href="#1、getAttributeNames" class="headerlink" title="1、getAttributeNames"></a>1、getAttributeNames</h2><p>request、response和servletContext作为作用域对象时：</p>
+<p> request和response对象中的getAttributeNames()获得的就是所有键的集合（Enumeration<string>），servletContext对象获得的则不是一个String类型,所以不能将集合中的值作为键来取值；</string></p>
+<p>  原因：因为ServletContext对象在Tomcat服务器启动时候已经含有一些属性信息了，不只是String类型的，所以强转时候出错。</p>
+<h2 id="2、img-src-xxx"><a href="#2、img-src-xxx" class="headerlink" title="2、img src=/xxx"></a>2、img src=/xxx</h2><p><img src="xxx">使用servletContext的getResourcePaths方法：</p>
+<p>  从得到的Set<string> filePathsSet 集合中遍历出来的filepath虽然是相对路径，当如果直接将其添加到src后面则不能显示。</string></p>
+<p>  原因：从网页上的img标签中可以看到src后面没有第一个‘/’，所以如果直接将filepath添加到src后面便会有2个‘/’。</p>
+<h2 id="3、ajax异步同步问题"><a href="#3、ajax异步同步问题" class="headerlink" title="3、ajax异步同步问题"></a>3、ajax异步同步问题</h2><p><strong>function</strong> showAge(){</p>
+<p> // 基于准备好的dom，初始化echarts实例</p>
+<p> <strong>var</strong> myChart = echarts.init(document.getElementById(‘main’));</p>
+<p> // 指定图表的配置项和数据</p>
+<p> option = {</p>
+<p> title: {</p>
+<p> text: ‘年龄分布图’</p>
+<p> },</p>
+<p> tooltip: {},</p>
+<p> legend: {</p>
+<p> data:[‘年龄’]</p>
+<p> },</p>
+<p> xAxis: {</p>
+<p> data: []</p>
+<p> },</p>
+<p> yAxis: {},</p>
+<p> series: [{</p>
+<p> name: ‘年龄’,</p>
+<p> type: ‘bar’,</p>
+<p> data: []</p>
+<p> }]</p>
+<p> };</p>
+<p> ajax(“get”,”handleServlet”,”flag=queryAge”,<strong>function</strong>(data){</p>
+<p> eval(“var ageJson=”+data);</p>
+<p> <strong>for</strong> (<strong>var</strong> key <strong>in</strong> ageJson){</p>
+<p> option.xAxis.data.push(key);</p>
+<p> option.series[0].data.push(ageJson[key]);</p>
+<p> }</p>
+<p> // 使用刚指定的配置项和数据显示图表。</p>
+<p> myChart.setOption(option);</p>
+<p> });</p>
+<p> myChart.setOption(option); //产生异步问题，先于ajax执行，里面没有数据</p>
+<p> }</p>
+<p> |</p>
+<p>在进行类似添加时如果通过ajax去服务器取得数据后再来填充数据，如上会产生异步问题</p>
+<p><strong>解决方案：</strong></p>
+<p>1、将要填充的代码放入ajax程序中。</p>
+<p>2、将Ajax设置为同步访问，（默认异步）</p>
+<h2 id="4、ajax异步同步问题"><a href="#4、ajax异步同步问题" class="headerlink" title="4、ajax异步同步问题"></a>4、ajax异步同步问题</h2><h2 id="5、ajax异步同步问题"><a href="#5、ajax异步同步问题" class="headerlink" title="5、ajax异步同步问题"></a>5、ajax异步同步问题</h2><h2 id="6、ajax异步同步问题"><a href="#6、ajax异步同步问题" class="headerlink" title="6、ajax异步同步问题"></a>6、ajax异步同步问题</h2><h2 id="7、ajax异步同步问题-入坑需谨慎"><a href="#7、ajax异步同步问题-入坑需谨慎" class="headerlink" title="7、ajax异步同步问题# 入坑需谨慎"></a>7、ajax异步同步问题# 入坑需谨慎</h2><h2 id="1、getAttributeNames-1"><a href="#1、getAttributeNames-1" class="headerlink" title="1、getAttributeNames"></a>1、getAttributeNames</h2><p>request、response和servletContext作为作用域对象时：</p>
+<p> request和response对象中的getAttributeNames()获得的就是所有键的集合（Enumeration<string>），servletContext对象获得的则不是一个String类型,所以不能将集合中的值作为键来取值；</string></p>
+<p>  原因：因为ServletContext对象在Tomcat服务器启动时候已经含有一些属性信息了，不只是String类型的，所以强转时候出错。</p>
+<h2 id="2、img-src-xxx-1"><a href="#2、img-src-xxx-1" class="headerlink" title="2、img src=/xxx"></a>2、img src=/xxx</h2><p><img src="xxx">使用servletContext的getResourcePaths方法：</p>
+<p>  从得到的Set<string> filePathsSet 集合中遍历出来的filepath虽然是相对路径，当如果直接将其添加到src后面则不能显示。</string></p>
+<p>  原因：从网页上的img标签中可以看到src后面没有第一个‘/’，所以如果直接将filepath添加到src后面便会有2个‘/’。</p>
+<h2 id="3、ajax异步同步问题-1"><a href="#3、ajax异步同步问题-1" class="headerlink" title="3、ajax异步同步问题"></a>3、ajax异步同步问题</h2><p>| </p>
+<p><strong>function</strong> showAge(){</p>
+<p> // 基于准备好的dom，初始化echarts实例</p>
+<p> <strong>var</strong> myChart = echarts.init(document.getElementById(‘main’));</p>
+<p> // 指定图表的配置项和数据</p>
+<p> option = {</p>
+<p> title: {</p>
+<p> text: ‘年龄分布图’</p>
+<p> },</p>
+<p> tooltip: {},</p>
+<p> legend: {</p>
+<p> data:[‘年龄’]</p>
+<p> },</p>
+<p> xAxis: {</p>
+<p> data: []</p>
+<p> },</p>
+<p> yAxis: {},</p>
+<p> series: [{</p>
+<p> name: ‘年龄’,</p>
+<p> type: ‘bar’,</p>
+<p> data: []</p>
+<p> }]</p>
+<p> };</p>
+<p> ajax(“get”,”handleServlet”,”flag=queryAge”,<strong>function</strong>(data){</p>
+<p> eval(“var ageJson=”+data);</p>
+<p> <strong>for</strong> (<strong>var</strong> key <strong>in</strong> ageJson){</p>
+<p> option.xAxis.data.push(key);</p>
+<p> option.series[0].data.push(ageJson[key]);</p>
+<p> }</p>
+<p> // 使用刚指定的配置项和数据显示图表。</p>
+<p> myChart.setOption(option);</p>
+<p> });</p>
+<p> myChart.setOption(option); //产生异步问题，先于ajax执行，里面没有数据</p>
+<p> }</p>
+<p> |</p>
+<p>在进行类似添加时如果通过ajax去服务器取得数据后再来填充数据，如上会产生异步问题</p>
+<p><strong>解决方案：</strong></p>
+<p>1、将要填充的代码放入ajax程序中。</p>
+<p>2、将Ajax设置为同步访问，（默认异步）</p>
+<h2 id="4、ajax异步同步问题-1"><a href="#4、ajax异步同步问题-1" class="headerlink" title="4、ajax异步同步问题"></a>4、ajax异步同步问题</h2><h2 id="5、ajax异步同步问题-1"><a href="#5、ajax异步同步问题-1" class="headerlink" title="5、ajax异步同步问题"></a>5、ajax异步同步问题</h2><h2 id="6、ajax异步同步问题-1"><a href="#6、ajax异步同步问题-1" class="headerlink" title="6、ajax异步同步问题"></a>6、ajax异步同步问题</h2><h2 id="7、ajax异步同步问题"><a href="#7、ajax异步同步问题" class="headerlink" title="7、ajax异步同步问题"></a>7、ajax异步同步问题</h2>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;web&quot;&gt;&lt;a href=&quot;#web&quot; class=&quot;headerlink&quot; title=&quot;web&quot;&gt;&lt;/a&gt;web&lt;/h1&gt;&lt;h1 id=&quot;入坑需谨慎&quot;&gt;&lt;a href=&quot;#入坑需谨慎&quot; class=&quot;headerlink&quot; title=&quot;入坑需谨慎&quot;&gt;&lt;/a&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>first</title>
@@ -34,10 +141,11 @@
     <link href="http://yoursite.com/2017/08/31/hello-world/"/>
     <id>http://yoursite.com/2017/08/31/hello-world/</id>
     <published>2017-08-31T12:34:28.383Z</published>
-    <updated>2017-08-31T12:34:28.383Z</updated>
+    <updated>2017-08-31T15:50:22.884Z</updated>
     
     <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><a id="more"></a>
+<h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
 <h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
@@ -49,7 +157,8 @@
     
     <summary type="html">
     
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;
     
     </summary>
     
